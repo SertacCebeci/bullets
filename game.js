@@ -42,10 +42,7 @@ class game{
 
                     if( c2c(enmy.x, enmy.y, enmy.r, project.x, project.y, project.r)){
                         this.p1.destroyProj(i);
-                        if(enmy.type){
-                            this.heal()
-                        }
-                        this.nys[n].destroyEnemy(en);
+                        this.enemyShootAction(enmy, en, n)
                         this.increaseScrore()
                     }
                 }
@@ -59,8 +56,7 @@ class game{
                 const enmy = nyds.enemies[en];
 
                 if(r2r(enmy.x, enmy.y, enmy.r, enmy.r, this.p1.bar.x, this.p1.bar.y, this.p1.bar.w, this.p1.bar.h)){
-                    this.nys[n].destroyEnemy(en);
-                    this.p1.bar.reduce()
+                    this.enemyReachAction(enmy, en, n)
                 }
             }
         }
@@ -89,6 +85,35 @@ class game{
         this.score += 5;
     }
 
+    enemyShootAction(enmy, en, n){
+        let type = enmy.type
+        if(type === 0){
+            this.nys[n].destroyEnemy(en);
+        }
+        else if(type === 1){
+            this.nys[n].destroyEnemy(en);
+            this.heal(10)
+        }
+        else if(type === 2){
+            this.p1.bar.reduce()
+        }
+    }
+
+    enemyReachAction(enmy, en, n){
+        let type = enmy.type
+        if(type === 0){
+            this.nys[n].destroyEnemy(en);
+            this.p1.bar.reduce()
+        }
+        else if(type === 1){
+            this.nys[n].destroyEnemy(en);
+            this.p1.bar.reduce()
+        }
+        else if(type === 2){
+            this.nys[n].destroyEnemy(en);
+            this.heal()
+        }
+    }
     decreaseScore(){
         this.score--;
     }

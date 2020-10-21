@@ -9,15 +9,25 @@ class enemy{
 
         this.game = game;
 
-        this.type = Math.random() < 0.15
+        this.type = -1
+        let rnd = Math.random()
+        if(rnd < 0.10){
+            this.type = 1
+        }else if(rnd > 0.10 && rnd < 0.25){
+            this.type = 2
+        }else{
+            this.type = 0;
+        }
     }
 
     draw(){
         push();
-        if(this.type){
+        if(this.type === 1){
             fill(100, 200, 100);
+        }else if(this.type === 2){
+            fill(100, 100, 200);
         }else{
-            fill(200, 100, 100);
+            fill(200, 100, 100)
         }
         circle(this.x, this.y, this.r);
         pop();
