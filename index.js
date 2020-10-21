@@ -1,4 +1,4 @@
-var w = 400;
+var w = 300;
 var h = 600;
 var g;
 
