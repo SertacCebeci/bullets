@@ -7,7 +7,7 @@ class nydus{
 
         setInterval( () => {
             this.makeEnemy()
-        }, (Math.random() * 3000 + 1000))
+        }, (Math.random() * 3000 + 4000))
     }
 
     makeEnemy(){
