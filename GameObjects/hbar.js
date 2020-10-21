@@ -28,5 +28,6 @@ class hbar{
 
     increase(val = 5){
         this.val = this.val + val;
+        if(this.val >= 100) this.val = 100;
     }
 }
