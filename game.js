@@ -8,6 +8,9 @@ class game{
         for(let i = 0; i < enemyNumber; i++){
             this.nys.push(new nydus(Math.random() * (w-40) + 20))
         }
+        setInterval(() => {
+            this.nys.push(new nydus(Math.random() * (w-40) + 20))
+        }, 5000)
         this.gameover = false;
     }
 
