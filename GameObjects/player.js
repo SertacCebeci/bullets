@@ -35,9 +35,7 @@ class player{
         //console.log(this.projs);
     }
 
-    takeDmg(enemies){
-        for(let i = 0; i < enemies.length; i++){
-            this.bar.reduce(enemies[i])
-        }
+    takeDmg(val){
+        this.bar.reduce(val)
     }
 }

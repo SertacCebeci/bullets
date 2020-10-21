@@ -22,7 +22,11 @@ class hbar{
         this.draw()
     }
 
-    reduce(){
-        this.val = this.val - 10;
+    reduce(val = 10){
+        this.val = this.val - val;
+    }
+
+    increase(val = 5){
+        this.val = this.val + val;
     }
 }

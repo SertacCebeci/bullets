@@ -8,11 +8,17 @@ class enemy{
         this.speed = 2;
 
         this.game = game;
+
+        this.type = Math.random() < 0.15
     }
 
     draw(){
         push();
-        fill(200, 100, 100);
+        if(this.type){
+            fill(100, 200, 100);
+        }else{
+            fill(200, 100, 100);
+        }
         circle(this.x, this.y, this.r);
         pop();
     }

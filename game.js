@@ -3,6 +3,7 @@ class game{
         this.w = w;
         this.h = h;
         this.p1 = new player(w / 2, h * 8 / 9);
+        this.score = 10;
         this.nys = [];
         for(let i = 0; i < enemyNumber; i++){
             this.nys.push(new nydus(Math.random() * (w-40) + 20))
@@ -24,7 +25,7 @@ class game{
             text('game over', this.w / 2 - 74, this.h / 2);
             pop();
         }
-        
+        this.draw()
     }
 
     colls(){
@@ -40,7 +41,11 @@ class game{
 
                     if( c2c(enmy.x, enmy.y, enmy.r, project.x, project.y, project.r)){
                         this.p1.destroyProj(i);
+                        if(enmy.type){
+                            this.heal()
+                        }
                         this.nys[n].destroyEnemy(en);
+                        this.increaseScrore()
                     }
                 }
             }
@@ -61,9 +66,27 @@ class game{
                 }
             }
         }
+    }
 
-        
+    heal(){
+        this.p1.bar.increase()
+    }
 
+    draw(){
+        push();
+        textSize(16);
+        let scoretext = "Score: " + this.score;
+        fill(255);
+        text(scoretext, 10, 40)
+        pop();
+    }
+
+    increaseScrore(){
+        this.score += 5;
+    }
+
+    decreaseScore(){
+        this.score--;
     }
 
 }
