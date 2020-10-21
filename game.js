@@ -12,6 +12,7 @@ class game{
     }
 
     update(){
+        this.checkgameover()
         if(!this.gameover){
             for(let i = 0; i < this.nys.length; i++){
                 this.nys[i].update()
@@ -60,11 +61,14 @@ class game{
                 if(r2r(enmy.x, enmy.y, enmy.r, enmy.r, this.p1.bar.x, this.p1.bar.y, this.p1.bar.w, this.p1.bar.h)){
                     this.nys[n].destroyEnemy(en);
                     this.p1.bar.reduce()
-                    if(this.p1.bar.val <= 0){
-                        this.gameover = true
-                    }
                 }
             }
+        }
+    }
+
+    checkgameover(){
+        if(this.p1.bar.val <= 0){
+            this.gameover = true
         }
     }
 
