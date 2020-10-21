@@ -15,5 +15,5 @@ function r2r(r1x, r1y, r1w, r1h, r2x, r2y, r2w, r2h){
 
 function c2c(x1, y1, r1, x2, y2, r2){
     let dist = Math.sqrt(Math.pow((x2 - x1), 2) +  Math.pow((y2 - y1), 2))
-    return r1 + r2 >= dist
+    return (r1 + r2) / 2 + 3 >= dist
 }
