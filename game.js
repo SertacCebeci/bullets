@@ -79,7 +79,7 @@ class game{
     draw(){
         push();
         textSize(16);
-        let scoretext = "Score =: " + this.score;
+        let scoretext = "Score: " + this.score;
         fill(255);
         text(scoretext, 10, 40)
         pop();
