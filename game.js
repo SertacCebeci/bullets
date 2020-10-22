@@ -10,6 +10,7 @@ class game{
         }
         setInterval(() => {
             this.nys.push(new nydus(Math.random() * (w-40) + 20))
+            console.log('nys added');
         }, 20000)
         this.gameover = false;
     }

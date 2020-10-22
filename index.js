@@ -14,5 +14,4 @@ function draw(){
 
 function mousePressed(){
     g.p1.shoot(mouseX, mouseY)
-    g.p1.takeDmg(1)
 }
