@@ -9,8 +9,8 @@ class proj{
         let dist = Math.sqrt(Math.pow((tx - sx), 2) +  Math.pow((ty - sy), 2))
 
         this.unit = {
-            x: 5*(tx - sx) / dist,
-            y: 5*(ty - sy) / dist
+            x: 15*(tx - sx) / dist,
+            y: 15*(ty - sy) / dist
         }
     }
 
